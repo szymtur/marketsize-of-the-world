@@ -1,11 +1,12 @@
 $(document).ready(function(){
     chartRender(inputData[7].male_percent);
     setMarketsize(inputData); 
-    postData(startData);
+    postData(initialData);
 });
 
 
-const startData = [
+//initial data
+const initialData = [
     {"world_headcount": 132997229},
     {"headcount": 18619612},
     {"world_spending": 1023},
@@ -16,7 +17,8 @@ const startData = [
     {"male_percent": 44}
 ];
 
-const inputData = JSON.parse(JSON.stringify(startData));
+const inputData = JSON.parse(JSON.stringify(initialData));
+
 
 function postData(data) {
     //send data to JSON Server
@@ -79,30 +81,43 @@ function putData(data) {
 }
 
 
-//changing random data
+//changing data
 function changeData(data) {
     let array = ['-', '+'];
     let randomSign = array[Math.floor(Math.random() * array.length)];
-    let randomIndex = Math.floor(Math.random() * data.length-2);     
+    let randomIndex = Math.floor(Math.random() * data.length-4);     
 
-    //changing data
+    //random changing headcount and spending data
     for(let key in data[randomIndex]) {
-        let newData = eval(`${data[randomIndex][key]} ${randomSign} ${data[randomIndex][key]*0.1}`).toFixed(2);
+        let newData = eval(`${data[randomIndex][key]} ${randomSign} ${data[randomIndex][key]*0.05}`).toFixed(2);
         data[randomIndex][key] = Number(newData);
     }
     //changing gender_percent
-    for(let key in data[data.length-1]){
+    for(let key in data[data.length-1]) {
         let newData = Math.round(eval(`${data[data.length-1][key]} ${randomSign} ${data[data.length-1][key]*0.03}`));
         data[data.length-1][key] = Number(newData);
     }
     //changing gdp_percent
-    for(let key in data[data.length-2]){
+    for(let key in data[data.length-2]) {
         let newData = Math.round(eval(`${data[data.length-2][key]} ${randomSign} 1`));
-        if(newData == 0 || randomSign == 0){
-            data[data.length-2][key] = -1;    
+        data[data.length-2][key] = Number(newData);
+    }
+    //changing gdp_spending
+    for(let key in data[data.length-3]) {
+        if(randomSign == '-'){
+            data[data.length-3][key] -= 2;
         }
-        else{
-            data[data.length-2][key] = Number(newData);
+        else if(randomSign == '+'){
+            data[data.length-3][key] += 2;
+        }
+    }
+    //changing gdp_headcount
+    for(let key in data[data.length-4]) {
+        if(randomSign == '-'){
+            data[data.length-4][key] -= 1;
+        }
+        else if(randomSign == '+'){
+            data[data.length-4][key] += 1;
         }
     }
     return data;
