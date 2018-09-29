@@ -9,12 +9,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <title>Marketsize of the World</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-
-  <script src="js/jquery.js" defer></script>
-  <script src="js/d3.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" defer src="js/jquery.js"></script>
+  <script type="text/javascript" defer src="js/d3.js"></script>
+  <script type="text/javascript" defer src="js/main.js"></script>
 
 </head>
 <body>
@@ -26,7 +25,6 @@
         document.querySelector(".info_caption").innerHTML = header;
       }               
   </script>
-
   <!-- Content Box -->
   <div id=wrapper>
     <div id="market_size" class="content_box">
@@ -98,32 +96,6 @@
           document.querySelector("#wrapper").style.height = "37.8vw";
           document.querySelector("#wrapper").style.top = "59%";
         }               
-    </script>
+    </script>    
 </body>
 </html>
-
-
-<!--
-  Twoim zadaniem jest jak najwierniejsze odwzorowanie lewego obrazka.
-
-  Zasady:
-
-  CSS
-    - Wszystkie style zapisujemy w pliku style.css.
-    - Korzystamy tylko i wyłącznie z jednostek miary VW oraz (VH w pewnych przypadkach).
-        * W przypadku tego zadania nie ma potrzeby wykorzystywania VH.
-        Przykład css (font-size:1.2vw, left:5vw, line-height:0.8vw)
-    - Wyjątkiem są cienkie linie je można zapisać jako 1px.
-    - Nie zmieniamy rozmiarów klasy content_box
-    - Wykorzystaj font families z font.css do ostylowania tekstów. / Korzystamy tylko i wyłącznie z czcionki 'Lato'.
-    - Kolory muszą być 1:1 jak na obrazku
-
-  JavaScript
-    - Piszemy kod w czystym JS z pomocą jQuery
-    - Biblioteka do proceduralnego generowania SVG to D3 z pomocą której stworzysz wykres kołowy.
-    - Ogólna funkcja generująca wykres powinna zawierać jeden argument, który odpowiada procentowi wypełnienia niebieskiej części.
-    - Cały moduł powinien mieć funkcje ustawiającą jego zawartość:
-        setMarketsize(headcount, headcount_share, spending, spending_share, gender_percent, gdp, gdp_headcount, gdp_spending)
-        argument gender_percent jest wykorzystywany w funkcji ogólnej generującej wykres kołowy.
-
-  -->
