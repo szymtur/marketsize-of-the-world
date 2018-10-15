@@ -118,6 +118,12 @@ h6 {
 		padding-bottom: 2.5vh
 	}
 
+	@media (max-width: 992px) {
+		.header {
+			padding-bottom: 1.5vh
+		}
+	}
+
 	.header h1 {
 		font-size: 1.2vw;
 		font-weight: 700;
@@ -137,6 +143,12 @@ h6 {
 	/* Top Container Styles - Start */
 	.top_container {
 		margin: 0 1.4vw 1.5vh 1.4vw;
+	}
+
+	@media (max-width: 992px) {
+		.top_container {
+			margin-bottom: 1vh;
+		}
 	}
 
 	.top_container h3, 
@@ -213,7 +225,14 @@ h6 {
 
 	.bottom_container .gender h3 {
 		width: 100%;
-		margin: 1.2vh 0 1.5vw 2.5vw;
+		margin: 1.5vh 0 1.5vw 2.5vw;
+	}
+
+	@media (max-width: 768px) {
+		.bottom_container .gender h3 {
+			margin-top: 0.5vh;
+			margin-bottom: 1vh;
+		}
 	}
 
 	.bottom_container .gender h5 {
@@ -245,7 +264,13 @@ h6 {
 	}
 
 	.bottom_container .gdp h3 {
-		margin: 1.2vh 0 0 2.5vw;
+		margin: 1.5vh 0 0 2.5vw;
+	}
+
+	@media (max-width: 768px) {
+		.bottom_container .gdp h3 {
+			margin-top: 0.5vh;
+		}
 	}
 
 	.bottom_container .gdp h2 {
