@@ -63,7 +63,7 @@ h6 {
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1){
 	body {
-		border: 2px solid red;
+		border: 2px solid #ff0000;
 	}
 
 	.content_box {
@@ -78,7 +78,7 @@ h6 {
 		-webkit-transform: translateY(-40%);
 		    -ms-transform: translateY(-40%);
 		        transform: translateY(-40%);
-		color: red;
+		color: #ff0000;
 	}
 }
 
@@ -106,7 +106,7 @@ h6 {
 		background: #ffffff;
 		overflow: hidden;
 		border-radius: 5px;
-		border: 1px solid #a8a8a8;
+		border: 1px solid #808080;
 	}
 
 	.info_caption{
@@ -114,6 +114,10 @@ h6 {
 	}
 
 	/* Header Styles - Start */
+	.header {
+		padding-bottom: 2.5vh
+	}
+
 	.header h1 {
 		font-size: 1.2vw;
 		font-weight: 700;
@@ -125,14 +129,14 @@ h6 {
 		font-size: 0.9vw;
 		color: #565656;
 		line-height: 0.5vw;
-		margin: 0 0 0.5vw 0.95vw;
+		margin: 0 0 0 0.95vw;
 	}
 	/* Header Styles - End */
 
 
 	/* Top Container Styles - Start */
 	.top_container {
-		margin: 1.4vw 1.4vw 1vw 1.4vw;
+		margin: 0 1.4vw 1.5vh 1.4vw;
 	}
 
 	.top_container h3, 
@@ -170,7 +174,7 @@ h6 {
 		        flex-direction: row;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
-		        justify-content: center;
+				  justify-content: center;
 	}
 
 	.bottom_container .gender {
@@ -209,7 +213,7 @@ h6 {
 
 	.bottom_container .gender h3 {
 		width: 100%;
-		margin: 0.9vw 0 1.5vw 2.5vw;
+		margin: 1.2vh 0 1.5vw 2.5vw;
 	}
 
 	.bottom_container .gender h5 {
@@ -240,22 +244,23 @@ h6 {
 		left: 0;
 	}
 
-	.bottom_container .gdp h3{
-		margin: 0.9vw 0 0 2.5vw;
+	.bottom_container .gdp h3 {
+		margin: 1.2vh 0 0 2.5vw;
 	}
 
 	.bottom_container .gdp h2 {
 		color: #0bd8aa;
 		font-weight: 700;
-		margin: 0.5vw 0 0 2.5vw;
-		height: 1.7vw;
+		margin: 0 0 0 2.5vw;
 		width: 3.5vw;
 	}
 
-	.bottom_container .gdp h2,
-	.bottom_container .gdp .triangle_up,
-	.bottom_container .gdp .triangle_down {
-		display: inline-block;
+	.bottom_container .gdp .gdp_percent_container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		padding-top: 0.5vw;
+		padding-bottom: 0.5vw;
 	}
 
 	.bottom_container .gdp .triangle_up {

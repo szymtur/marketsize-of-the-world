@@ -128,7 +128,7 @@ function changeData(data) {
 }
 
 
-// //chart rendering
+//chart rendering
 function chartRender(inputData) {
     let width = 100;
     let height = 100;
@@ -208,11 +208,11 @@ function checkingArrows(data) {
     let api_value = Math.round(data);
 
     if (api_value > web_value){
-        $(triangle_up).css('display', 'inline-block');
+        $(triangle_up).css('display', 'block');
         $(triangle_down).css('display', 'none');
     }
     else if(api_value < web_value){
         $(triangle_up).css('display', 'none');
-        $(triangle_down).css('display', 'inline-block');
+        $(triangle_down).css('display', 'block');
     }
 }
