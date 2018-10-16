@@ -124,6 +124,12 @@ h6 {
 		}
 	}
 
+	@media (max-width: 768px) {
+		.header {
+			padding-bottom: 1.1vh
+		}
+	}
+
 	.header h1 {
 		font-size: 1.2vw;
 		font-weight: 700;
