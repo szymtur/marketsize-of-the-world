@@ -62,10 +62,6 @@ h6 {
 
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1){
-	body {
-		border: 2px solid #ff0000;
-	}
-
 	.content_box {
 		display: none;
 	}
