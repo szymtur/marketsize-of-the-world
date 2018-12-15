@@ -44,7 +44,6 @@ function postData(data) {
         let timeout = setTimeout(function () {
             clearInterval(interval);
         }, 120000); 
-
     }).fail(function (error) {
         console.log('connecting ' + error.statusText);
     });

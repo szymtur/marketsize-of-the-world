@@ -196,6 +196,8 @@ h6 {
 	}
 
 	.bottom_container .gender {
+		padding-top: 0.5vw;
+		padding-bottom: 1.5vw;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -231,14 +233,7 @@ h6 {
 
 	.bottom_container .gender h3 {
 		width: 100%;
-		margin: 1.5vh 0 1.5vw 2.5vw;
-	}
-
-	@media (max-width: 768px) {
-		.bottom_container .gender h3 {
-			margin-top: 0.5vh;
-			margin-bottom: 1vh;
-		}
+		margin: 0.5vw 0 1.5vw 2.5vw;
 	}
 
 	.bottom_container .gender h5 {
@@ -269,14 +264,13 @@ h6 {
 		left: 0;
 	}
 
-	.bottom_container .gdp h3 {
-		margin: 1.5vh 0 0 2.5vw;
+	.bottom_container .gdp {
+		padding-top: 0.5vw;
+		padding-bottom: 1.5vw
 	}
 
-	@media (max-width: 768px) {
-		.bottom_container .gdp h3 {
-			margin-top: 0.5vh;
-		}
+	.bottom_container .gdp h3 {
+		margin: 0.5vw 0 0 2.5vw;
 	}
 
 	.bottom_container .gdp h2 {
