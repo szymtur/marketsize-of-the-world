@@ -1,5 +1,4 @@
-![](img/preview.png | width=480)
-<img src="img/preview.png" width="200" height="400" />
+![](img/preview.png)
 
 ### CSS
 
