@@ -1,10 +1,10 @@
-![](img/preview.png)
+![](img/preview.png | width=480)
+<img src="img/preview.png" width="200" height="400" />
 
 ### CSS
 
-- Korzystamy tylko i wyłącznie z jednostek miary VW oraz (VH w pewnych przypadkach).
+- Korzystamy tylko i wyłącznie z jednostek miary VW oraz VH.
 
-- W przypadku tego zadania nie ma potrzeby wykorzystywania VH.
     Przykład:
 
     ```html
