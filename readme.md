@@ -1,4 +1,4 @@
-<img src="img/preview.png" width="501" height="350">
+<img src="img/preview.png" width="501" height="350" text-align="center">
 
 
 ### CSS
