@@ -1,4 +1,4 @@
-<img src="img/preview.png" width="501" height="350" align="center">
+![smiley](img/preview.png)
 
 
 ### CSS
@@ -19,8 +19,6 @@
 - Korzystamy tylko i wyłącznie z czcionki 'Lato'.
 
 - Kolory muszą być 1:1 jak na obrazku
-
- ![smiley](img/preview.png){:height="36px" width="36px"}.
 
 
 ### JavaScript
