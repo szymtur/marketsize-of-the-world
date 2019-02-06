@@ -34,7 +34,7 @@
 - Cały moduł powinien mieć funkcje ustawiającą jego zawartość:
 
     ```javascript
-	 setMarketsize (
+	setMarketsize (
 		headcount,
 		headcount_share,
 		spending,
