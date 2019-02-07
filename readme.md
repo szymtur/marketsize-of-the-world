@@ -1,48 +1,37 @@
 # Marketsize Of The World
 
-![smiley](img/preview.png)
+![](img/preview.png)
 
+###Link:
+[https://szymtur.github.io/marketsize-of-the-world](https://szymtur.github.io/marketsize-of-the-world)
 
-### CSS
+### Description:
+- To create pie chart was used a library for the procedural generation of SVG - D3.js.
+- All data is updated automatically with data from api.
+- The chart is live updated with data from api too.
+- In CSS was used only relative length units: `vh` and `vw`.
 
-- Korzystamy tylko i wyłącznie z jednostek miary VW oraz VH.
+### Technologies used:
+- HTML5
+- CSS3
+- FlexBox
+- RWD Media Queries
+- JavaScript
+- jQuery
+- Ajax
+- D3.js
 
-    Przykład:
+### Initial data
 
-    ```html
-	h1 {
-		font-size:1.2vw
-		left:5vw 
-		line-height:0.8vw 
-	}
-    ```
-- Wyjątkiem są cienkie linie je można zapisać jako 1px.
-
-- Korzystamy tylko i wyłącznie z czcionki 'Lato'.
-
-- Kolory muszą być 1:1 jak na obrazku
-
-
-### JavaScript
-
-- Piszemy kod w czystym JS z pomocą jQuery
-
-- Do stworzenia wykresu kołowego korzystamy z biblioteki do proceduralnego generowania SVG - D3.js
-
-- Ogólna funkcja generująca wykres powinna zawierać jeden argument, który odpowiada procentowi wypełnienia niebieskiej części.
-
-- Cały moduł powinien mieć funkcje ustawiającą jego zawartość:
-
-    ```javascript
-	setMarketsize (
-		headcount,
-		headcount_share,
-		spending,
-		spending_share,
-		gender_percent,
-		gdp,
-		gdp_headcount,
-		gdp_spending
-	)
-    ```
-- Argument __gender_percent__ jest wykorzystywany w funkcji ogólnej generującej wykres kołowy.
+```json
+initialData = [
+    {"world_headcount": 132997229},
+    {"headcount": 18619612},
+    {"world_spending": 1023},
+    {"spending": 143.18},
+    {"gdp_headcount": 8},
+    {"gdp_spending": 15},
+    {"gdp": 2},
+    {"male_percent": 44}
+]
+```
