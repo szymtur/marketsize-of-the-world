@@ -6,10 +6,10 @@
 [https://szymtur.github.io/marketsize-of-the-world](https://szymtur.github.io/marketsize-of-the-world)
 
 ### Description:
-- To create pie chart was used a library for the procedural generation of SVG - D3.js.
+- Library for the procedural generation of SVG - D3.js have been used to create the pie chart.
 - All data is updated automatically with data from api.
 - The chart is live updated with data from api too.
-- In CSS was used only relative length units: `vh` and `vw`.
+- Only relative length units: `vh` and `vw` have been used in CSS.
 
 ### Technologies used:
 - HTML5
