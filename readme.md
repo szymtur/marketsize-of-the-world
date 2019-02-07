@@ -21,7 +21,7 @@
 - Ajax
 - D3.js
 
-### Initial data
+### Initial data:
 
 ```json
 initialData = [
