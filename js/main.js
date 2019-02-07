@@ -1,4 +1,4 @@
-console.log('the application is working by 120 seconds - setTimeout = 120000 ms');
+console.log('the application is working by 120 seconds');
 
 $(document).ready(function(){
     chartRender(inputData[7].male_percent);
