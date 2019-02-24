@@ -1,105 +1,109 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <title>Marketsize of the World</title>
-  <link rel="shortcut icon" type="image/ico" href="img/favicon.png  ">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" defer src="js/jquery.js"></script>
-  <script type="text/javascript" defer src="js/d3.js"></script>
-  <script type="text/javascript" defer src="js/main.js"></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Marketsize of the World</title>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.png  ">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" defer src="js/jquery.js"></script>
+    <script type="text/javascript" defer src="js/d3.js"></script>
+    <script type="text/javascript" defer src="js/main.js"></script>
 </head>
 <body>
-  <!-- Warning Caption -->
-  <h2 class="info_caption">change your screen<br>resolution</h2>
-  <script>
-    if (/iphone|ipod|ipad|blackberry|Android|webOS|IEMobile/i.test(navigator.userAgent)){
-      let header = "<h2 style='font-size: 8vw;' class='info_caption'>rotate your device<br>to landscape position</h2>";      
-        document.querySelector(".info_caption").innerHTML = header;
-      }               
-  </script>
-  <!-- Content Box -->
-  <div id=wrapper>
-    <div id="market_size" class="content_box">
-      <div class="row header">
-        <h1>Marketsize of the World</h1>
-        <h2>Headcount and Spending Power</h2>
-      </div>
-      <!-- Top Container -->
-      <div class="row top_container">
-        <div class="col">
-          <h3>Headcount</h3>
-          <h4 class="headcount"></h4>
-          <h5><span class="headcount_share"></span>% of the world</h5>
-        </div>
-        <div class="col">
-          <h3>Spending Power</h3>
-          <h4 class="spending"></h4>
-          <h5><span class="spending_share"></span>% of the world</h5>
-        </div>
-      </div>
-      <!-- The middle line -->
-      <div class="row line">
-        <hr>
-      </div>
-      <!-- Bottom Container -->
-      <div class="row bottom_container">
-        <div class="col">
-          <div class=" gender">
-            <h3>Gender composition</h3>
-            <div class="left-col">
-              <h6 class="male"></h6>
-              <h5>male</h5>
-            </div> 
-            <div class="center-col">  
-              <div class="svg-container"></div>
-            </div>    
-            <div class="right-col">
-              <h6 class="female"></h6>
-              <h5>female</h5>
-            </div> 
-          </div>
-        </div>
-        <div class="col">
-          <div class="gdp">
-            <h3>GDP Growth Rate<br>by Through 2030</h3>
-            <div class="gdp_percent_container">
-              <h2 class="gdp_percent"></h2>
-              <span class="triangle_up"></span>
-              <span class="triangle_down"></span>
+    <!-- Warning Caption -->
+    <h2 class="info_caption">change your screen<br>resolution</h2>
+    <script>
+        if (/iphone|ipod|ipad|blackberry|Android|webOS|IEMobile/i.test(navigator.userAgent)){
+            let header = "<h2 style='font-size: 8vw;' class='info_caption'>rotate your device<br>to landscape position</h2>";      
+            document.querySelector(".info_caption").innerHTML = header;
+        }               
+    </script>
+
+    <!-- Content Box -->
+    <div id="wrapper">
+        <div id="market_size" class="content_box">
+            <div class="row header">
+                <h1>Marketsize of the World</h1>
+                <h2>Headcount and Spending Power</h2>
             </div>
-            <div class="gdp_bottom">
-              <div class="col_one">
+
+            <!-- Top Container -->
+            <div class="row top_container">
+                <div class="col">
                 <h3>Headcount</h3>
-                <h5 class="gdp_headcount"></h5>
-              </div>
-              <div class="col_two">
-                <h3>Spending</h3>
-                <h5 class="gdp_spending"></h5>
-              </div>
+                <h4 class="headcount"></h4>
+                <h5><span class="headcount_share"></span>% of the world</h5>
+                </div>
+                <div class="col">
+                <h3>Spending Power</h3>
+                <h4 class="spending"></h4>
+                <h5><span class="spending_share"></span>% of the world</h5>
+                </div>
             </div>
-          </div>
+
+            <!-- The middle line -->
+            <div class="row line">
+                <hr>
+            </div>
+        
+            <!-- Bottom Container -->
+            <div class="row bottom_container">
+                <div class="col">
+                <div class=" gender">
+                    <h3>Gender composition</h3>
+                    <div class="left-col">
+                        <h6 class="male"></h6>
+                        <h5>male</h5>
+                    </div> 
+                    <div class="center-col">  
+                        <div class="svg-container"></div>
+                    </div>    
+                    <div class="right-col">
+                        <h6 class="female"></h6>
+                        <h5>female</h5>
+                    </div> 
+                </div>
+                </div>
+                <div class="col">
+                    <div class="gdp">
+                        <h3>GDP Growth Rate<br>by Through 2030</h3>
+                        <div class="gdp_percent_container">
+                            <h2 class="gdp_percent"></h2>
+                            <span class="triangle_up"></span>
+                            <span class="triangle_down"></span>
+                        </div>
+                        <div class="gdp_bottom">
+                            <div class="col_one">
+                                <h3>Headcount</h3>
+                                <h5 class="gdp_headcount"></h5>
+                            </div>
+                            <div class="col_two">
+                                <h3>Spending</h3>
+                                <h5 class="gdp_spending"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
-      </div> 
-    </div>
-  </div>  
-  <!-- styles for mobile devices -->
-  <script>
-      if (/iphone|ipod|ipad|blackberry|Android|webOS|IEMobile/i.test(navigator.userAgent)){
-          document.querySelector(".content_box").style.height = "21vw";
-          document.querySelector(".content_box").style.transform = "scale(1.8)";
-          document.querySelector(".content_box").style.margin = "8.4vw 12vw 8.4vw 12vw";
-          document.querySelector("#wrapper").style.width = "54vw";
-          document.querySelector("#wrapper").style.height = "37.8vw";
-          document.querySelector("#wrapper").style.top = "59%";
+    </div>  
+    
+    <!-- styles for mobile devices -->
+    <script>
+        if (/iphone|ipod|ipad|blackberry|Android|webOS|IEMobile/i.test(navigator.userAgent)) {
+            document.querySelector(".content_box").style.height = "21vw";
+            document.querySelector(".content_box").style.transform = "scale(1.8)";
+            document.querySelector(".content_box").style.margin = "8.4vw 12vw 8.4vw 12vw";
+            document.querySelector("#wrapper").style.width = "54vw";
+            document.querySelector("#wrapper").style.height = "37.8vw";
+            document.querySelector("#wrapper").style.top = "59%";
         }               
     </script>    
 </body>
