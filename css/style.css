@@ -10,16 +10,13 @@ html,
 body {
 	background-color: #F2F5F8;
 	font-family: 'Lato', sans-serif;
-	overflow: hidden;
 	width: 100vw;
-	height: 100vh;
-}
-
-div {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    height: 100vh;
+    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+    overflow: hidden;
 	cursor: default;
 }
 
