@@ -8,15 +8,15 @@
 
 html,
 body {
-	background-color: #F2F5F8;
-	font-family: 'Lato', sans-serif;
 	width: 100vw;
     height: 100vh;
     -webkit-user-select: none;
 	    -moz-user-select: none;
 	    -ms-user-select: none;
 	        user-select: none;
-    overflow: hidden;
+	font-family: 'Lato', sans-serif;
+	background-color: #F2F5F8;
+	overflow: hidden;
 	cursor: default;
 }
 
@@ -58,33 +58,33 @@ h6 {
 
 
 /* Content-box Styles - Start */
-@media (max-aspect-ratio: 1/1){
+@media (max-aspect-ratio: 1/1) {
 	.content_box {
 		display: none;
 	}
 
 	.info_caption {
-		font-size: 5vw;
 		position: relative;
-		text-align: center;
 		top: 40%;
 		-webkit-transform: translateY(-40%);
 		    -ms-transform: translateY(-40%);
 		        transform: translateY(-40%);
 		color: #ff0000;
+		font-size: 5vw;
+		text-align: center;
 	}
 }
 
 @media (min-aspect-ratio: 1/1) {
 	#wrapper {
 		position: absolute;
+		width: 36vw;
+		height: 24vw;
 		top: 50%;
 		left: 50%;
 		-webkit-transform: translate(-50%, -60%);
 		    -ms-transform: translate(-50%, -60%);
 		        transform: translate(-50%, -60%);
-		width: 36vw;
-		height: 24vw;
 	}
 
 	.content_box {
@@ -102,7 +102,7 @@ h6 {
 		border: 1px solid #808080;
 	}
 
-	.info_caption{
+	.info_caption {
 		display: none;
 	}
 
@@ -189,8 +189,6 @@ h6 {
 	}
 
 	.bottom_container .gender {
-		padding-top: 0.5vw;
-		padding-bottom: 1.5vw;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -198,7 +196,9 @@ h6 {
 		    flex-wrap: wrap;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
-		        justify-content: center;
+				justify-content: center;
+		padding-top: 0.5vw;
+		padding-bottom: 1.5vw;
 	}
 
 	.bottom_container .gender .left-col,
@@ -274,9 +274,16 @@ h6 {
 	}
 
 	.bottom_container .gdp .gdp_percent_container {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: row;
-		align-items: flex-end;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-align: end;
+		    -ms-flex-align: end;
+		        align-items: flex-end;
 		padding-top: 0.5vw;
 		padding-bottom: 0.5vw;
 	}
