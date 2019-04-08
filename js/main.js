@@ -1,4 +1,4 @@
-console.log('the application is working by 120 seconds');
+console.log('the application is working for 120 seconds');
 
 $(document).ready(function(){
     chartRender(inputData[7].male_percent);
@@ -82,7 +82,7 @@ function putData(data) {
         console.log('data updated');
     }).fail(function (error) {
         console.log('connecting ' + error.statusText);
-    }); 
+    });
 }
 
 
@@ -172,13 +172,13 @@ function setMarketsize(data){
     let data_headcount_share = Math.round((data[1].headcount/data[0].world_headcount*100));
     let data_spending = data[3].spending.toFixed(2);
     let data_spending_share = Math.round(data[3].spending/data[2].world_spending*100)
-    
+
     let top_container = $('.top_container'); 
     let headcount = top_container.find('.headcount').text(data_headcount);
     let headcount_share = top_container.find('.headcount_share').text(data_headcount_share);
     let spending = top_container.find('.spending').text('$' + data_spending);
     let spending_share = top_container.find('.spending_share').text(data_spending_share);
-    
+
     let data_male_percent = data[7].male_percent;
     let data_gdp = data[6].gdp <= 0 ? data[6].gdp : "+" + data[6].gdp;
     let data_gdp_headcount = Math.round(data[4].gdp_headcount);
@@ -202,7 +202,7 @@ function checkingArrows(data) {
     let bottom_container = $('.bottom_container');    
     let triangle_up = bottom_container.find('.triangle_up');
     let triangle_down = bottom_container.find('.triangle_down');   
-    
+
     let web_value = parseInt($('.bottom_container').find('.gdp_percent').text());
     let api_value = Math.round(data);
 
