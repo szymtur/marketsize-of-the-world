@@ -1,13 +1,13 @@
-console.log('the application is working for 120 seconds');
+console.info('the application is working for 120 seconds');
 
 $(document).ready(function(){
-    chartRender(inputData[7].male_percent);
-    setMarketsize(inputData); 
-    postData(initialData);
+    chartRender(initialData[7].male_percent);   // renders donut chart
+    setMarketsize(initialData);                 // inserts initial data into app
+    postData(initialData);                      // posts initial data to JSON server and stsrts the app
 });
 
 
-//initial data
+// initial data
 const initialData = [
     {"world_headcount": 132997229},
     {"headcount": 18619612},
@@ -19,13 +19,9 @@ const initialData = [
     {"male_percent": 44}
 ];
 
-// JSON.stringify(obj) — converts an JavaScript object to a JSON string
-// JSON.parse(str) — converts a JSON string back to a JavaScript object
-const inputData = JSON.parse(JSON.stringify(initialData));
 
-
+// posts initial data to JSON server
 function postData(data) {
-    //send data to JSON Server
     $.ajax({
         url: "https://api.myjson.com/bins/",
         method: "POST",
@@ -34,23 +30,16 @@ function postData(data) {
         cache: false,
         data: JSON.stringify(data)
     }).done(function (response) {
-        console.log(response.uri);
-        url = response.uri;
-
-        let interval = setInterval(function () {
-            getData(url);
-        }, 2000);
-
-        let timeout = setTimeout(function () {
-            clearInterval(interval);
-        }, 120000); 
+        console.info('0 - sending initianl data');
+        let interval = setInterval(function () { getData(response.uri) }, 2000);
+        setTimeout(function () { clearInterval(interval) }, 120000);
     }).fail(function (error) {
-        console.log('connecting ' + error.statusText);
+        console.error('connecting ' + error.statusText);
     });
-}
+};
 
 
-//get data from JSON Server
+// gets data from JSON Server
 function getData(url) {
     $.ajax({
         method: "GET",
@@ -58,76 +47,81 @@ function getData(url) {
         dataType: "json",
         cache: false
     }).done(function (response) {
-        console.log('connected');
-        checkingArrows(response[6]['gdp']);
+        console.info('1 - geting data');
+        setArrows(response[6]['gdp']);
         chartRender(response[7]['male_percent']);
         setMarketsize(response);
-        changeData(response);
-        putData(response);
+        putData(changeData(response), url);
     }).fail(function (error) {
-        console.log('connecting ' + error.statusText);
+        console.error('connecting ' + error.statusText);
     });
-}
+};
 
 
-//put modificated data to JSON Server
-function putData(data) {
+// puts modificated data to JSON Server
+function putData(data, url) {
     $.ajax({
         url: url,
         method: "PUT",
         dataType: "json",
         contentType: "application/json",
         data: JSON.stringify(data)
-    }).done(function (response) {
-        console.log('data updated');
+    }).done(function() {
+        console.info('3 - sending updated data');
     }).fail(function (error) {
-        console.log('connecting ' + error.statusText);
+        console.error('connecting ' + error.statusText);
     });
-}
+};
 
 
-//changing data
+// changes data
 function changeData(data) {
     const array = ['-', '+'];
     const randomSign = array[Math.floor(Math.random() * array.length)];
     const randomIndex = Math.floor(Math.random() * data.length - 4);
 
-    //random changing headcount and spending data
+    // random changes headcount and spending data
     for (let key in data[randomIndex]) {
         let newData = eval(data[randomIndex][key] + ' ' + randomSign + ' ' + data[randomIndex][key] * 0.05).toFixed(2);
         data[randomIndex][key] = Number(newData);
-    }
-    //changing gender_percent
-    for (let _key in data[data.length - 1]) {
-        let _newData = Math.round(eval(data[data.length - 1][_key] + ' ' + randomSign + ' ' + data[data.length - 1][_key] * 0.03));
-        data[data.length - 1][_key] = Number(_newData);
-    }
-    //changing gdp_percent
-    for (let _key2 in data[data.length - 2]) {
-        let _newData2 = Math.round(eval(data[data.length - 2][_key2] + ' ' + randomSign + ' 1'));
-        data[data.length - 2][_key2] = Number(_newData2);
-    }
-    //changing gdp_spending
-    for (let _key3 in data[data.length - 3]) {
+    };
+
+    // changes gender_percent
+    for (let key in data[data.length - 1]) {
+        let newData = Math.round(eval(data[data.length - 1][key] + ' ' + randomSign + ' ' + data[data.length - 1][key] * 0.03));
+        data[data.length - 1][key] = Number(newData);
+    };
+
+    // changes gdp_percent
+    for (let key in data[data.length - 2]) {
+        let newData = Math.round(eval(data[data.length - 2][key] + ' ' + randomSign + ' 1'));
+        data[data.length - 2][key] = Number(newData);
+    };
+
+    // changes gdp_spending
+    for (let key in data[data.length - 3]) {
         if (randomSign == '-') {
-            data[data.length - 3][_key3] -= 2;
+            data[data.length - 3][key] -= 2;
         } else if (randomSign == '+') {
-            data[data.length - 3][_key3] += 2;
+            data[data.length - 3][key] += 2;
         }
-    }
-    //changing gdp_headcount
-    for (let _key4 in data[data.length - 4]) {
+    };
+
+    // changes gdp_headcount
+    for (let key in data[data.length - 4]) {
         if (randomSign == '-') {
-            data[data.length - 4][_key4] -= 1;
+            data[data.length - 4][key] -= 1;
         } else if (randomSign == '+') {
-            data[data.length - 4][_key4] += 1;
+            data[data.length - 4][key] += 1;
         }
-    }
+    };
+
+    console.info('2 - changing random data');
     return data;
-}
+};
 
 
-//chart rendering
+// chart rendering
 function chartRender(inputData) {
     let width = 100;
     let height = 100;
@@ -135,7 +129,7 @@ function chartRender(inputData) {
     let innerRadius = width / 3.5;
 
     const data = [
-        { start: 0, stop: 100 - inputData, color: "#0bd8aa" }, 
+        { start: 0, stop: 100 - inputData, color: "#0bd8aa" },
         { start: 100 - inputData, stop: 100, color: "#53a8e2" }
     ];
 
@@ -166,18 +160,18 @@ function chartRender(inputData) {
 }
 
 
-//innput data to website
+// innput data to website
 function setMarketsize(data){
     let data_headcount = numberWithCommas(Math.round(data[1].headcount));
     let data_headcount_share = Math.round((data[1].headcount/data[0].world_headcount*100));
     let data_spending = data[3].spending.toFixed(2);
-    let data_spending_share = Math.round(data[3].spending/data[2].world_spending*100)
+    let data_spending_share = Math.round(data[3].spending/data[2].world_spending*100);
 
     let top_container = $('.top_container'); 
-    let headcount = top_container.find('.headcount').text(data_headcount);
-    let headcount_share = top_container.find('.headcount_share').text(data_headcount_share);
-    let spending = top_container.find('.spending').text('$' + data_spending);
-    let spending_share = top_container.find('.spending_share').text(data_spending_share);
+    top_container.find('.headcount').text(data_headcount);
+    top_container.find('.headcount_share').text(data_headcount_share);
+    top_container.find('.spending').text('$' + data_spending);
+    top_container.find('.spending_share').text(data_spending_share);
 
     let data_male_percent = data[7].male_percent;
     let data_gdp = data[6].gdp <= 0 ? data[6].gdp : "+" + data[6].gdp;
@@ -185,25 +179,25 @@ function setMarketsize(data){
     let data_gdp_spending = Math.round(data[5].gdp_spending);
 
     let bottom_container = $('.bottom_container');
-    let male_percent = bottom_container.find('.male').text(data_male_percent + '%');
-    let female_percent = bottom_container.find('.female').text(100 - data_male_percent + '%');
-    let gdp = bottom_container.find('.gdp_percent').text(data_gdp + '%');
-    let gdp_headcount = bottom_container.find('.gdp_headcount').text(data_gdp_headcount + '%');
-    let gdp_spending = bottom_container.find('.gdp_spending').text(data_gdp_spending + '%');
+    bottom_container.find('.male').text(data_male_percent + '%');
+    bottom_container.find('.female').text(100 - data_male_percent + '%');
+    bottom_container.find('.gdp_percent').text(data_gdp + '%');
+    bottom_container.find('.gdp_headcount').text(data_gdp_headcount + '%');
+    bottom_container.find('.gdp_spending').text(data_gdp_spending + '%');
 
     function numberWithCommas(value) {
         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-}
+    };
+};
 
 
-//arrows conditions
-function checkingArrows(data) {
-    let bottom_container = $('.bottom_container');    
+// arrow's condition
+function setArrows(data) {
+    let bottom_container = $('.bottom_container');
     let triangle_up = bottom_container.find('.triangle_up');
-    let triangle_down = bottom_container.find('.triangle_down');   
+    let triangle_down = bottom_container.find('.triangle_down');
 
-    let web_value = parseInt($('.bottom_container').find('.gdp_percent').text());
+    let web_value = parseInt($(bottom_container).find('.gdp_percent').text());
     let api_value = Math.round(data);
 
     if (api_value > web_value){
@@ -214,4 +208,4 @@ function checkingArrows(data) {
         $(triangle_up).css('display', 'none');
         $(triangle_down).css('display', 'block');
     }
-}
+};
