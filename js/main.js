@@ -18,7 +18,7 @@ const INITIAL_DATA = {
 
 const OPTIONS = {
     METHOD: 'GET',
-    URL: 'http://www.currency-fake-data-api.com',
+    URL: 'http://www.marketsize-fake-data-api.com',
     CONTENT_TYPE: 'application/json',
     DATA_TYPE: 'json',
     TIMEOUT: 1500
