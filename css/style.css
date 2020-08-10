@@ -6,7 +6,6 @@
     padding: 0;
 }
 
-html,
 body {
     width: 100vw;
     height: 100vh;
@@ -22,7 +21,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .col {
@@ -64,6 +62,12 @@ h6 {
 
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1) {
+
+    body {
+        flex-direction: column;
+    }
+
+
     .content_box {
         display: none;
     }
@@ -81,6 +85,12 @@ h6 {
 }
 
 @media (min-aspect-ratio: 1/1) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     #wrapper {
         /* position: absolute; */
         width: 36vw;
