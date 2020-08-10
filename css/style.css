@@ -62,11 +62,9 @@ h6 {
 
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1) {
-
     body {
         flex-direction: column;
     }
-
 
     .content_box {
         display: none;
@@ -85,16 +83,10 @@ h6 {
 }
 
 @media (min-aspect-ratio: 1/1) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     #wrapper {
         /* position: absolute; */
-        width: 36vw;
         height: 24vw;
+        width: 36vw;
         /* top: 50%; */
         /* left: 50%; */
         /* -webkit-transform: translate(-50%, -50%); */
@@ -103,8 +95,8 @@ h6 {
     }
 
     .content_box {
-        width: 30vw;
         height: 20vw;
+        width: 30vw;
         -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);
                 transform: scale(1.2);
