@@ -108,24 +108,24 @@ h6 {
 
     /* Header Styles - Start */
     .header {
-        padding-bottom: 5%;
+        padding-bottom: 1.25vw;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1198px) {
         .header {
-            padding-bottom: 1vh
+            padding-bottom: 0.95vw
         }
     }
 
     .header h1 {
-        font-size: 1.3vw;
+        font-size: 1.25vw;
         font-weight: 700;
         color: #383847;
         margin: 1vw 0 0.5vw 0.9vw;
     }
 
     .header h2 {
-        font-size: 0.9vw;
+        font-size: 0.85vw;
         color: #565656;
         line-height: 0.5vw;
         margin: 0 0 0 0.95vw;

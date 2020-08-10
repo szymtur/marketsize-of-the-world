@@ -102,12 +102,15 @@
     <!-- styles for mobile devices -->
     <script>
         if (isMobile.any()) {
-            document.querySelector(".content_box").style.height = "21vw";
+            document.querySelector(".row.header").style.paddingBottom = "1vw";
+
+            document.querySelector(".content_box").style.height = "20vw";
             document.querySelector(".content_box").style.transform = "scale(1.8)";
-            document.querySelector(".content_box").style.margin = "8.4vw 12vw 8.4vw 12vw";
+            document.querySelector(".content_box").style.margin = "8vw 12vw 8vw 12vw";
+
             document.querySelector("#wrapper").style.width = "54vw";
-            document.querySelector("#wrapper").style.height = "37.8vw";
-            document.querySelector("#wrapper").style.top = "59%";
+            document.querySelector("#wrapper").style.height = "36vw";
+            // document.querySelector("#wrapper").style.top = "59%";
         }
     </script>
 </body>
