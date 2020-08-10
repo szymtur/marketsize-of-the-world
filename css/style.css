@@ -18,6 +18,10 @@ body {
     background-color: #F2F5F8;
     overflow: hidden;
     cursor: default;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .col {
@@ -64,11 +68,11 @@ h6 {
     }
 
     .info_caption {
-        position: relative;
-        top: 40%;
-        -webkit-transform: translateY(-40%);
-            -ms-transform: translateY(-40%);
-                transform: translateY(-40%);
+        /* position: relative; */
+        /* top: 40%; */
+        /* -webkit-transform: translateY(-40%); */
+            /* -ms-transform: translateY(-40%); */
+                /* transform: translateY(-40%); */
         color: #ff0000;
         font-size: 5vw;
         text-align: center;
@@ -77,14 +81,14 @@ h6 {
 
 @media (min-aspect-ratio: 1/1) {
     #wrapper {
-        position: absolute;
+        /* position: absolute; */
         width: 36vw;
         height: 24vw;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        /* top: 50%; */
+        /* left: 50%; */
+        /* -webkit-transform: translate(-50%, -50%); */
+            /* -ms-transform: translate(-50%, -50%); */
+                /* transform: translate(-50%, -50%); */
     }
 
     .content_box {
@@ -140,13 +144,7 @@ h6 {
 
     /* Top Container Styles - Start */
     .top_container {
-        margin: 0 1.4vw 1.5vh 1.4vw;
-    }
-
-    @media (max-width: 992px) {
-        .top_container {
-            margin-bottom: 1vh;
-        }
+        margin: 0 1.4vw 1vw 1.4vw;
     }
 
     .top_container h3, 
