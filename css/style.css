@@ -7,8 +7,6 @@
 }
 
 body {
-    /* width: 100vw; */
-    /* height: 100vh; */
     -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -58,6 +56,11 @@ h6 {
 
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
     .content_box {
         display: none;
     }
