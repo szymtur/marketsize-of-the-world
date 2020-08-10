@@ -102,9 +102,13 @@
     <!-- styles for mobile devices -->
     <script>
         if (isMobile.any()) {
+            document.querySelector("body").style.height = "100vh";
+            document.querySelector("body").style.width = "100vw";
+
             // content_box dimensions: height: 20vw / width: 30vx
             document.querySelector("#wrapper").style.height = "30vw";
             document.querySelector("#wrapper").style.width = "45vw";
+            
             document.querySelector(".content_box").style.transform = "scale(1.5)";
             document.querySelector(".content_box").style.margin = "5vw 7.5vw 5vw 7.5vw";
         }
