@@ -17,10 +17,6 @@ body {
     background-color: #F2F5F8;
     overflow: hidden;
     cursor: default;
-
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .col {
@@ -62,10 +58,6 @@ h6 {
 
 /* Content-box Styles - Start */
 @media (max-aspect-ratio: 1/1) {
-    body {
-        flex-direction: column;
-    }
-
     .content_box {
         display: none;
     }
