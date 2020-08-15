@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    chartRender(INITIAL_DATA.male_percent);     // renders donut chart
-    setMarketsize(INITIAL_DATA);                // inserts initial data into app
-    fetchMarketsizeData();                      // posts initial data to JSON server and stsrts the app
+    chartRender(INITIAL_DATA.male_percent);     // rendering donut chart
+    setMarketsize(INITIAL_DATA);                // inserting initial data into app
+    fetchMarketsizeData();                      // fetching data from fake api
 });
 
 
